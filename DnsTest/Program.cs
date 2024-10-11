@@ -16,3 +16,8 @@ foreach (IPAddress ip in hostEntry.AddressList)
 
 string hostname = Dns.GetHostName();
 IPHostEntry localhost = Dns.GetHostEntry(hostname);
+
+// IP 에서 호스트명 알아내기
+IPAddress ipaddr = IPAddress.Parse("223.130.200.219");
+IPHostEntry iPHostEntry = Dns.GetHostEntry(ipaddr);
+Console.WriteLine(iPHostEntry.HostName);
