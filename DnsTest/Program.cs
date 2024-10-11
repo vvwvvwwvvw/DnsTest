@@ -12,7 +12,7 @@ foreach (IPAddress ip in hostEntry.AddressList)
     Console.WriteLine(ip);
 }
 
-// 로컬 호스트명 정보 얻기
+로컬 호스트명 정보 얻기
 
 string hostname = Dns.GetHostName();
 IPHostEntry localhost = Dns.GetHostEntry(hostname);
@@ -21,3 +21,10 @@ IPHostEntry localhost = Dns.GetHostEntry(hostname);
 IPAddress ipaddr = IPAddress.Parse("223.130.200.219");
 IPHostEntry iPHostEntry = Dns.GetHostEntry(ipaddr);
 Console.WriteLine(iPHostEntry.HostName);
+
+// EndPoint 클래스
+
+IPAddress ip1 = IPAddress.Parse("74.125.28.99");
+IPEndPoint ep = new IPEndPoint(ip1, 80);
+
+Console.WriteLine(ep.ToString()); // "74.125.28.99:80" 출력
